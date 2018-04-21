@@ -5,11 +5,6 @@ import initialFlowPage from './pages/initialFlow'
 import SignInPage from './pages/SignIn'
 import SignOutPage from './pages/SignOut'
 
-export const InitialFlow = StackNavigator({
-  initialFlow: {
-    screen: initialFlowPage
-  },
-});
 
 export const SignIn = StackNavigator({
   SignIn: {
@@ -23,11 +18,11 @@ export const SignOut = StackNavigator({
   },
 });
 
-export const createRootNavigator = (initialFlow = false, SignIn) => {
+export const createRootNavigator = (initialFlow = false, signedIn) => {
 
   return StackNavigator({
 
-    initialFlow: { screen: InitialFlow},
+    InitialFlow: { screen: initialFlowPage},
     SignedIn: { screen:  SignIn},
     SignedOut: { screen: SignOut},
 
@@ -36,7 +31,7 @@ export const createRootNavigator = (initialFlow = false, SignIn) => {
   {
 
     initialRouteName: initialFlow ? "InitialFlow" : (signedIn ? "SignedIn"  : "SignedOut"),
-
+    headerMode: 'none',
   });
 
 };
