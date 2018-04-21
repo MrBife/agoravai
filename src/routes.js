@@ -1,25 +1,25 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import initialFlow from './pages/initialFlow'
-import SignIn from './pages/SignIn'
-import SignOut from './pages/SignOut'
+import initialFlowPage from './pages/initialFlow'
+import SignInPage from './pages/SignIn'
+import SignOutPage from './pages/SignOut'
 
 export const InitialFlow = StackNavigator({
-  InitialFlow: {
-    screen: initialFlow
+  initialFlow: {
+    screen: initialFlowPage
   },
 });
 
 export const SignIn = StackNavigator({
   SignIn: {
-    screen: SignIn
+    screen: SignInPage
   },
 });
 
 export const SignOut = StackNavigator({
   SignOut: {
-    screen: SignOut
+    screen: SignOutPage
   },
 });
 
@@ -27,7 +27,7 @@ export const createRootNavigator = (initialFlow = false, SignIn) => {
 
   return StackNavigator({
 
-    InitialFlow: { screen: InitialFlow},
+    initialFlow: { screen: InitialFlow},
     SignedIn: { screen:  SignIn},
     SignedOut: { screen: SignOut},
 
