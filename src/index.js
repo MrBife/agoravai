@@ -15,7 +15,8 @@ export default class App extends React.Component {
     if (!initialFlow) {
       return null;
     }
-    const Layout =  createRootNavigator(initialFlow, signedIn);     
+    const Layout =  createRootNavigator(initialFlow, signedIn);
+    
     return <Layout />
   }
 }
