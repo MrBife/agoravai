@@ -18,13 +18,13 @@ export const SignIn = StackNavigator({
 });
 
 export const SignOut = StackNavigator({
-  SignIn: {
+  SignOut: {
     screen: SignOut
   },
 });
 
 export const createRootNavigator = (initialFlow = false, singedIn) => {
-  
+
   return StackNavigator({
 
     InitialFlow: { screen: InitialFlow},
