@@ -5,7 +5,6 @@ import initialFlowPage from './pages/initialFlow'
 import SignInPage from './pages/SignIn'
 import SignOutPage from './pages/SignOut'
 
-
 export const SignIn = StackNavigator({
   SignIn: {
     screen: SignInPage
