@@ -9,19 +9,34 @@ export const InitialFlow = StackNavigator({
   InitialFlow: {
     screen: initialFlow
   },
+});
+
+export const SignIn = StackNavigator({
   SignIn: {
     screen: SignIn
   },
-  SignOut: {
+});
+
+export const SignOut = StackNavigator({
+  SignIn: {
     screen: SignOut
   },
 });
 
-export const createRootNavigator = (initialFlow = false) => {
+export const createRootNavigator = (initialFlow = false, singedIn) => {
+  
   return StackNavigator({
-    InitialFlow: { screen: InitialFlow}
+
+    InitialFlow: { screen: InitialFlow},
+    SignIn: { screen:  SignIn},
+    SignOut: { screen: SignOut},
+
   },
+
   {
+
     initialRouteName: initialFlow ? "InitialFlow" : (signedIn ? "SignedIn"  : "SignedOut"),
+
   });
+
 };
