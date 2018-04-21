@@ -23,13 +23,13 @@ export const SignOut = StackNavigator({
   },
 });
 
-export const createRootNavigator = (initialFlow = false, singedIn) => {
+export const createRootNavigator = (initialFlow = false, SignIn) => {
 
   return StackNavigator({
 
     InitialFlow: { screen: InitialFlow},
-    SignIn: { screen:  SignIn},
-    SignOut: { screen: SignOut},
+    SignedIn: { screen:  SignIn},
+    SignedOut: { screen: SignOut},
 
   },
 

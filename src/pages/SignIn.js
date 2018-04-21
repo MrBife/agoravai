@@ -12,7 +12,7 @@ export default ({ navigation }) => (
         borderRadius={5}
         textStyle={{ color: '#003c8f' }}
         onPress={() => {
-            navigation.navigate("SignOut"));
+            navigation.navigate("SignOut");
         }}
     />
 );
