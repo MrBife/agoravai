@@ -7,7 +7,7 @@ import { isAuthTrue } from './services/flow'
 
 export default class App extends React.Component {
   state = {
-    initialFlow: true,
+    initialFlow: false,
     signedIn: false,
     signLoaded: false,
 };
@@ -15,7 +15,7 @@ export default class App extends React.Component {
 async componentDidMount() {
   try {
       const signedIn = await isSignedIn();
-      const initialFlows = await isAuthTrue();
+      const initialFlow = await isAuthTrue();
       this.setState({ signedIn, signLoaded: true });
   } catch (e) {
       alert("Erro");

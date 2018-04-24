@@ -3,6 +3,7 @@ import React from "react";
 
 import {  Button, Icon } from 'react-native-elements'
 import { Onboarding } from 'react-native-onboarding-swiper'
+import { isAuthTrue } from './../services/flow'
 
 export default ({ navigation }) => (
     <Button
@@ -12,7 +13,7 @@ export default ({ navigation }) => (
         borderRadius={5}
         textStyle={{ color: '#003c8f' }}
         onPress={() => {
-            navigation.navigate("SignedIn");
+            isAuthTrue().then(() => navigation.navigate("SignedIn")).catch(() => alert("Erro"));
         }}
     />
 );
