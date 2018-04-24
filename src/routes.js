@@ -22,14 +22,14 @@ export const createRootNavigator = (initialFlow = false, signedIn) => {
   return StackNavigator({
 
     InitialFlow: { screen: initialFlowPage},
-    SignedIn: { screen:  SignIn},
-    SignedOut: { screen: SignOut},
+    Logado: { screen:  SignIn},
+    Deslogado: { screen: SignOut},
 
   },
 
   {
 
-    initialRouteName: initialFlow ? "InitialFlow" : (signedIn ? "SignedIn"  : "SignedOut"),
+    initialRouteName: initialFlow ? "InitialFlow" : (signedIn ? "Logado"  : "Deslogado"),
     headerMode: 'none',
   });
 

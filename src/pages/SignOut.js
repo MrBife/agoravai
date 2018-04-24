@@ -7,13 +7,13 @@ import { Onboarding } from 'react-native-onboarding-swiper'
 
 export default ({ navigation }) => (
     <Button
-        title="SignedOut"
+        title="Logar"
         containerViewStyle={{ marginTop: 20 }}
         backgroundColor="white"
         borderRadius={5}
         textStyle={{ color: '#003c8f' }}
         onPress={() => {
-            onSignIn().then(() => navigation.navigate("SignedIn"));
+            onSignIn().then(() => navigation.navigate("Logado"));
         }}
     />
 );

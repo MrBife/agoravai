@@ -7,13 +7,13 @@ import { onAuthTrue } from './../services/flow'
 
 export default ({ navigation }) => (
     <Button
-        title="Get Started"
+        title="Iniciar"
         containerViewStyle={{ marginTop: 20 }}
         backgroundColor="white"
         borderRadius={5}
         textStyle={{ color: '#003c8f' }}
         onPress={() => {
-            onAuthTrue().then(() => navigation.navigate("SignedIn")).catch(() => alert("Erro"));
+            onAuthTrue().then(() => navigation.navigate("Deslogado")).catch(() => alert("Erro"));
         }}
     />
 );
