@@ -3,18 +3,23 @@ import { View } from 'react-native';
 
 import { createRootNavigator, InitialFlow } from './routes';
 import { isSignedIn } from './services/auth'
+import { isAuthTrue } from './services/flow'
 
 export default class App extends React.Component {
   state = {
-    initialFlow: false,
+    initialFlow: true,
     signedIn: false,
     signLoaded: false,
 };
 
-componentDidMount() {
-  isSignedIn()
-    .then(res => this.setState({ signedIn: res, signLoaded: true }))
-    .catch(err => alert("Erro"));
+async componentDidMount() {
+  try {
+      const signedIn = await isSignedIn();
+      const initialFlows = await isAuthTrue();
+      this.setState({ signedIn, signLoaded: true });
+  } catch (e) {
+      alert("Erro");
+  }
 }
 
   render() {
@@ -23,7 +28,7 @@ componentDidMount() {
     if (!signLoaded) {
       return null;
     }
-    const Layout =  createRootNavigator(initialFlow, signedIn);
+    const Layout =  createRootNavigator(!initialFlow, signedIn);
 
     return <Layout />
   }
