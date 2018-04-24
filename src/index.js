@@ -16,7 +16,7 @@ async componentDidMount() {
   try {
       const signedIn = await isSignedIn();
       const initialFlow = await isAuthTrue();
-      this.setState({ signedIn, signLoaded: true });
+      this.setState({ signedIn, initialFlow, signLoaded: true });
   } catch (e) {
       alert("Erro");
   }
